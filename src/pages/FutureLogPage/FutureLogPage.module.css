@@ -1,0 +1,125 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.header {
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.monthTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--space-2xl);
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) 0;
+}
+
+.entry:hover .deleteBtn {
+  opacity: 1;
+}
+
+.entryContent {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  word-break: break-word;
+}
+
+.deleteBtn {
+  opacity: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-md);
+  min-width: 32px;
+  min-height: 32px;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.deleteBtn:hover {
+  color: var(--color-danger);
+}
+
+@media (hover: none) {
+  .deleteBtn {
+    opacity: 1;
+  }
+}
+
+.addRow {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--space-sm);
+}
+
+.addInput {
+  flex: 1;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+  min-height: 36px;
+}
+
+.addInput:focus {
+  border-color: var(--color-accent);
+}
+
+.addBtn {
+  font-size: var(--font-size-lg);
+  color: var(--color-accent);
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.addBtn:disabled {
+  color: var(--color-text-tertiary);
+}

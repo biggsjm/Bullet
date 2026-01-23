@@ -1,0 +1,109 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.header {
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+}
+
+.settingInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.settingLabel {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.settingDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.toggleBtn {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  min-width: auto;
+}
+
+.toggleBtn:hover {
+  border-color: var(--color-accent);
+}
+
+.actionBtn {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast);
+}
+
+.actionBtn:hover {
+  border-color: var(--color-accent);
+}
+
+.actionBtn.danger {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.actionBtn.danger:hover {
+  background: var(--color-danger);
+  color: white;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.about {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.aboutSub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-xs);
+}

@@ -1,0 +1,230 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.header {
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.searchSection {
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  min-height: var(--touch-target);
+  font-size: var(--font-size-base);
+}
+
+.searchInput:focus {
+  border-color: var(--color-accent);
+}
+
+.searchResults {
+  margin-top: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.searchResult {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+}
+
+.searchResult:last-child {
+  border-bottom: none;
+}
+
+.resultDate {
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  font-size: var(--font-size-xs);
+}
+
+.resultContent {
+  flex: 1;
+  word-break: break-word;
+}
+
+.searching {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-sm);
+}
+
+.moreResults {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.builtIn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.logItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  justify-content: flex-start;
+  font-size: var(--font-size-base);
+  transition: background-color var(--transition-fast);
+}
+
+.logItem:hover {
+  background: var(--color-bg-secondary);
+}
+
+.logIcon {
+  font-size: var(--font-size-lg);
+  width: 1.5em;
+  text-align: center;
+}
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.collectionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newBtn {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  min-width: auto;
+  min-height: 36px;
+}
+
+.newBtn:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+.newForm {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.newInput {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  min-height: var(--touch-target);
+}
+
+.newInput:focus {
+  border-color: var(--color-accent);
+}
+
+.createBtn {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  min-width: auto;
+}
+
+.createBtn:disabled {
+  opacity: 0.5;
+}
+
+.empty {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+  padding: var(--space-md) 0;
+}
+
+.collectionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.collectionItem {
+  display: flex;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.collectionItem:hover {
+  background: var(--color-bg-secondary);
+}
+
+.collectionItem:hover .deleteBtn {
+  opacity: 1;
+}
+
+.collectionTitle {
+  flex: 1;
+  font-size: var(--font-size-base);
+}
+
+.deleteBtn {
+  opacity: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-lg);
+  min-width: 32px;
+  min-height: 32px;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.deleteBtn:hover {
+  color: var(--color-danger);
+}
+
+@media (hover: none) {
+  .deleteBtn {
+    opacity: 1;
+  }
+}

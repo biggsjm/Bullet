@@ -1,0 +1,64 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background-color var(--transition-fast);
+}
+
+.item:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.item:hover .deleteBtn {
+  opacity: 1;
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-sm) var(--space-xs);
+  cursor: pointer;
+  min-height: var(--touch-target);
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+  line-height: var(--line-height-normal);
+}
+
+.content.complete {
+  text-decoration: line-through;
+  color: var(--color-text-tertiary);
+}
+
+.content.migrated {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.editInput {
+  flex: 1;
+  padding: var(--space-sm) var(--space-xs);
+  min-height: var(--touch-target);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+}
+
+.deleteBtn {
+  opacity: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-lg);
+  padding: 0 var(--space-sm);
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.deleteBtn:hover {
+  color: var(--color-danger);
+}
+
+@media (hover: none) {
+  .deleteBtn {
+    opacity: 1;
+  }
+}

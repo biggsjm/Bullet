@@ -1,0 +1,36 @@
+.bullet {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  padding: 0 var(--space-sm);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.bullet:hover {
+  color: var(--color-accent);
+}
+
+.complete {
+  color: var(--color-text-tertiary);
+}
+
+.migrated {
+  color: var(--color-text-secondary);
+}
+
+.signifier {
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+}
+
+.char {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}

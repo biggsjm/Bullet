@@ -1,0 +1,81 @@
+.form {
+  padding: var(--space-md) 0;
+  border-top: 2px solid var(--color-border);
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.typeToggle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  padding: 0 var(--space-sm);
+}
+
+.typeToggle:hover {
+  color: var(--color-accent);
+}
+
+.input {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  min-height: var(--touch-target);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+}
+
+.addBtn {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  padding: 0 var(--space-md);
+}
+
+.addBtn:disabled {
+  color: var(--color-text-tertiary);
+  cursor: default;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) 0;
+}
+
+.optionGroup {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.optionBtn {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  min-height: 36px;
+  min-width: auto;
+  transition: all var(--transition-fast);
+}
+
+.optionBtn:hover {
+  border-color: var(--color-accent);
+}
+
+.optionBtn.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
