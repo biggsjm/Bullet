@@ -5,28 +5,30 @@
   left: 0;
   width: var(--sidebar-width);
   height: 100dvh;
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
+  background: var(--color-bg);
+  border-right: 1px solid var(--color-border-light);
   flex-direction: column;
-  padding: var(--space-xl) 0;
+  padding: var(--space-2xl) 0;
   z-index: 100;
 }
 
 .header {
   padding: 0 var(--space-xl);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-2xl);
 }
 
 .title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-accent);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 0;
   flex: 1;
 }
 
@@ -37,26 +39,31 @@
   padding: var(--space-md) var(--space-xl);
   color: var(--color-text-secondary);
   text-decoration: none;
-  font-size: var(--font-size-base);
-  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-fast);
   min-height: var(--touch-target);
+  border-left: 2px solid transparent;
 }
 
 .link:hover {
   color: var(--color-text);
-  background: var(--color-bg-secondary);
 }
 
 .link.active {
   color: var(--color-accent);
-  background: var(--color-bg-secondary);
+  border-left-color: var(--color-accent);
   font-weight: var(--font-weight-medium);
 }
 
 .icon {
-  font-size: var(--font-size-md);
-  width: 1.5em;
+  font-size: var(--font-size-base);
+  width: 1.25em;
   text-align: center;
+  opacity: 0.7;
+}
+
+.link.active .icon {
+  opacity: 1;
 }
 
 .footer {
@@ -69,12 +76,14 @@
   justify-content: flex-start;
   gap: var(--space-md);
   padding: var(--space-md) 0;
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .themeBtn:hover {
-  color: var(--color-text);
+  color: var(--color-text-secondary);
 }
 
 @media (min-width: 768px) {

@@ -11,8 +11,11 @@
 }
 
 .title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .monthNav {
@@ -22,26 +25,28 @@
 }
 
 .monthNav button {
-  font-size: var(--font-size-xl);
-  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-tertiary);
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .monthNav button:hover {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .monthLabel {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-medium);
   min-width: 160px;
   text-align: center;
+  color: var(--color-text);
 }
 
 .calendar {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-md) 0;
 }
 
 .weekdays {
@@ -55,13 +60,13 @@
   text-align: center;
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
 }
 
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: var(--space-xs);
+  gap: 2px;
 }
 
 .emptyDay {
@@ -80,35 +85,35 @@
   min-width: 0;
   min-height: 0;
   padding: var(--space-xs);
-  color: var(--color-text);
-  transition: background-color var(--transition-fast);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
 }
 
 .day:hover {
-  background: var(--color-bg-secondary);
+  color: var(--color-text);
 }
 
 .day.today {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   color: var(--color-accent);
-  background: var(--color-bg-secondary);
 }
 
 .dot {
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   background: var(--color-accent);
 }
 
 .taskSection {
-  border-top: 1px solid var(--color-border-light);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-sm);
 }
 
 .sectionTitle {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   margin-bottom: var(--space-md);
-  color: var(--color-text-secondary);
 }

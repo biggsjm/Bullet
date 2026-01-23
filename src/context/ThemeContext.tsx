@@ -23,7 +23,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('bullet-theme', theme);
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) {
-      metaTheme.setAttribute('content', theme === 'dark' ? '#1a1a1a' : '#faf8f5');
+      metaTheme.setAttribute('content', theme === 'dark' ? '#161616' : '#faf9f7');
     }
   }, [theme]);
 

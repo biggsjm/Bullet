@@ -5,12 +5,15 @@
 }
 
 .header {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .searchSection {
@@ -19,10 +22,10 @@
 
 .searchInput {
   width: 100%;
-  padding: var(--space-md);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
+  padding: var(--space-sm) 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
   min-height: var(--touch-target);
   font-size: var(--font-size-base);
 }
@@ -31,11 +34,13 @@
   border-color: var(--color-accent);
 }
 
+.searchInput::placeholder {
+  color: var(--color-text-tertiary);
+}
+
 .searchResults {
   margin-top: var(--space-sm);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-top: 1px solid var(--color-border-light);
   max-height: 300px;
   overflow-y: auto;
 }
@@ -43,7 +48,7 @@
 .searchResult {
   display: flex;
   gap: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--color-border-light);
   font-size: var(--font-size-sm);
 }
@@ -61,24 +66,27 @@
 .resultContent {
   flex: 1;
   word-break: break-word;
+  color: var(--color-text-secondary);
 }
 
 .searching {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
   margin-top: var(--space-sm);
 }
 
 .moreResults {
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) 0;
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
 }
 
 .sectionTitle {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .builtIn {
@@ -90,30 +98,33 @@
 .logList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
 }
 
 .logItem {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border-light);
   justify-content: flex-start;
-  font-size: var(--font-size-base);
-  transition: background-color var(--transition-fast);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.logItem:last-child {
+  border-bottom: none;
 }
 
 .logItem:hover {
-  background: var(--color-bg-secondary);
+  color: var(--color-text);
 }
 
 .logIcon {
-  font-size: var(--font-size-lg);
-  width: 1.5em;
+  font-size: var(--font-size-base);
+  width: 1.25em;
   text-align: center;
+  opacity: 0.5;
 }
 
 .collections {
@@ -129,18 +140,15 @@
 }
 
 .newBtn {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--color-accent);
-  padding: var(--space-xs) var(--space-md);
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-md);
   min-width: auto;
-  min-height: 36px;
+  min-height: 32px;
+  padding: 0;
 }
 
 .newBtn:hover {
-  background: var(--color-accent);
-  color: white;
+  text-decoration: underline;
 }
 
 .newForm {
@@ -150,11 +158,10 @@
 
 .newInput {
   flex: 1;
-  padding: var(--space-sm) var(--space-md);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
   min-height: var(--touch-target);
+  font-size: var(--font-size-sm);
 }
 
 .newInput:focus {
@@ -162,16 +169,14 @@
 }
 
 .createBtn {
-  padding: var(--space-sm) var(--space-md);
-  background: var(--color-accent);
-  color: white;
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
   min-width: auto;
+  padding: 0 var(--space-sm);
 }
 
 .createBtn:disabled {
-  opacity: 0.5;
+  color: var(--color-text-tertiary);
 }
 
 .empty {
@@ -183,22 +188,23 @@
 .collectionList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
 }
 
 .collectionItem {
   display: flex;
   align-items: center;
-  padding: var(--space-md);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border-light);
   cursor: pointer;
-  transition: background-color var(--transition-fast);
+  transition: color var(--transition-fast);
+}
+
+.collectionItem:last-child {
+  border-bottom: none;
 }
 
 .collectionItem:hover {
-  background: var(--color-bg-secondary);
+  color: var(--color-accent);
 }
 
 .collectionItem:hover .deleteBtn {
@@ -207,15 +213,15 @@
 
 .collectionTitle {
   flex: 1;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 .deleteBtn {
   opacity: 0;
   color: var(--color-text-tertiary);
-  font-size: var(--font-size-lg);
-  min-width: 32px;
-  min-height: 32px;
+  font-size: var(--font-size-md);
+  min-width: 28px;
+  min-height: 28px;
   transition: opacity var(--transition-fast), color var(--transition-fast);
 }
 
@@ -225,6 +231,6 @@
 
 @media (hover: none) {
   .deleteBtn {
-    opacity: 1;
+    opacity: 0.6;
   }
 }

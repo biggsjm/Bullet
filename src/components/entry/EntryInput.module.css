@@ -1,6 +1,7 @@
 .form {
-  padding: var(--space-md) 0;
-  border-top: 2px solid var(--color-border);
+  padding: var(--space-lg) 0 var(--space-sm);
+  border-top: 1px solid var(--color-border-light);
+  margin-top: var(--space-sm);
 }
 
 .inputRow {
@@ -10,23 +11,23 @@
 }
 
 .typeToggle {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
   padding: 0 var(--space-sm);
 }
 
 .typeToggle:hover {
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
 }
 
 .input {
   flex: 1;
   padding: var(--space-sm) var(--space-md);
   min-height: var(--touch-target);
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-light);
+  background: transparent;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
   transition: border-color var(--transition-fast);
 }
 
@@ -34,11 +35,15 @@
   border-color: var(--color-accent);
 }
 
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
 .addBtn {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
   color: var(--color-accent);
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-sm);
 }
 
 .addBtn:disabled {
@@ -50,7 +55,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
   padding: var(--space-sm) 0;
 }
 
@@ -61,17 +66,18 @@
 
 .optionBtn {
   padding: var(--space-xs) var(--space-md);
-  font-size: var(--font-size-sm);
-  border-radius: var(--radius-md);
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border-light);
-  min-height: 36px;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  min-height: 32px;
   min-width: auto;
+  color: var(--color-text-secondary);
   transition: all var(--transition-fast);
 }
 
 .optionBtn:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-text-secondary);
 }
 
 .optionBtn.active {

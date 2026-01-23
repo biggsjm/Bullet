@@ -6,7 +6,7 @@
   min-height: var(--touch-target);
   padding: 0 var(--space-sm);
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text);
   transition: color var(--transition-fast);
   flex-shrink: 0;
@@ -21,12 +21,12 @@
 }
 
 .migrated {
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
 }
 
 .signifier {
   color: var(--color-accent);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
 }
 
 .char {

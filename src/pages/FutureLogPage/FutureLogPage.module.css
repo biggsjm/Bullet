@@ -5,12 +5,15 @@
 }
 
 .header {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .subtitle {
@@ -21,7 +24,7 @@
 
 .grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   grid-template-columns: 1fr;
 }
 
@@ -32,34 +35,30 @@
 }
 
 .card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-lg);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
 .monthTitle {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-accent);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
 }
 
 .entries {
   display: flex;
   flex-direction: column;
-  min-height: var(--space-2xl);
+  min-height: var(--space-xl);
 }
 
 .entry {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: var(--space-xs) 0;
+  padding: 2px 0;
 }
 
 .entry:hover .deleteBtn {
@@ -70,14 +69,15 @@
   flex: 1;
   font-size: var(--font-size-sm);
   word-break: break-word;
+  color: var(--color-text-secondary);
 }
 
 .deleteBtn {
   opacity: 0;
   color: var(--color-text-tertiary);
-  font-size: var(--font-size-md);
-  min-width: 32px;
-  min-height: 32px;
+  font-size: var(--font-size-sm);
+  min-width: 28px;
+  min-height: 28px;
   transition: opacity var(--transition-fast), color var(--transition-fast);
 }
 
@@ -87,7 +87,7 @@
 
 @media (hover: none) {
   .deleteBtn {
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 
@@ -95,29 +95,31 @@
   display: flex;
   gap: var(--space-xs);
   margin-top: var(--space-xs);
-  border-top: 1px solid var(--color-border-light);
-  padding-top: var(--space-sm);
 }
 
 .addInput {
   flex: 1;
-  padding: var(--space-xs) var(--space-sm);
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border-light);
+  padding: var(--space-xs) 0;
+  background: transparent;
+  border-bottom: 1px solid var(--color-border-light);
+  border-radius: 0;
   font-size: var(--font-size-sm);
-  min-height: 36px;
+  min-height: 32px;
 }
 
 .addInput:focus {
   border-color: var(--color-accent);
 }
 
+.addInput::placeholder {
+  color: var(--color-text-tertiary);
+}
+
 .addBtn {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   color: var(--color-accent);
-  min-width: 36px;
-  min-height: 36px;
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .addBtn:disabled {

@@ -8,14 +8,14 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .backBtn {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  color: var(--color-text-tertiary);
   min-width: auto;
-  padding: var(--space-sm);
+  padding: 0;
 }
 
 .backBtn:hover {
@@ -23,30 +23,27 @@
 }
 
 .title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
+  padding: var(--space-xs) 0;
 }
 
 .title:hover {
-  background: var(--color-bg-secondary);
+  color: var(--color-accent);
 }
 
 .titleInput {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  padding: var(--space-xs) var(--space-sm);
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-accent);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-accent);
   flex: 1;
 }
 
 .notFound {
-  color: var(--color-text-secondary);
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
   text-align: center;
   padding: var(--space-2xl);
 }

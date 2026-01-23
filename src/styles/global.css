@@ -73,11 +73,12 @@ ol {
 ::selection {
   background-color: var(--color-accent);
   color: white;
+  opacity: 0.9;
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling - minimal, Reeder-like */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -86,5 +87,9 @@ ol {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
-  border-radius: 3px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
 }
