@@ -1,0 +1,57 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.dragHandle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: var(--touch-target);
+  color: var(--color-text-tertiary);
+  cursor: grab;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  touch-action: none;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.sortableItem {
+  display: flex;
+  align-items: center;
+}
+
+.sortableItem:hover .dragHandle {
+  opacity: 1;
+}
+
+.sortableItem.dragging {
+  opacity: 0.5;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.sortableItem.dragging .dragHandle {
+  opacity: 1;
+}
+
+.entryWrapper {
+  flex: 1;
+}
+
+@media (hover: none) {
+  .dragHandle {
+    opacity: 0.5;
+  }
+}

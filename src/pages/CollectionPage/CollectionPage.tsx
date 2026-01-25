@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { toLocalDateStr } from '../../utils/date';
 import { useCollection, updateCollection } from '../../hooks/useCollections';
 import { useEntriesByCollection, addEntry } from '../../hooks/useEntries';
-import { EntryList } from '../../components/entry/EntryList';
+import { SortableEntryList } from '../../components/entry/SortableEntryList';
 import { EntryInput } from '../../components/entry/EntryInput';
 import type { BulletType, Signifier } from '../../db/models';
 import { useState } from 'react';
@@ -34,7 +35,7 @@ export function CollectionPage() {
   const handleAdd = (content: string, bulletType: BulletType, signifier: Signifier) => {
     addEntry({
       content,
-      date: new Date().toISOString().slice(0, 10),
+      date: toLocalDateStr(),
       bulletType,
       signifier,
       collectionId: collection.id,
@@ -91,7 +92,7 @@ export function CollectionPage() {
         )}
       </header>
 
-      <EntryList entries={entries} emptyMessage="No entries in this collection" />
+      <SortableEntryList entries={entries} collectionId={collectionId} emptyMessage="No entries in this collection" />
       <EntryInput onAdd={handleAdd} placeholder="Add to collection..." />
     </div>
   );

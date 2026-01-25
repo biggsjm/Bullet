@@ -10,7 +10,8 @@
   border-bottom: none;
 }
 
-.item:hover .deleteBtn {
+.item:hover .deleteBtn,
+.item:hover .migrateBtn {
   opacity: 1;
 }
 
@@ -60,8 +61,71 @@
   color: var(--color-danger);
 }
 
+.migrateBtn {
+  opacity: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-md);
+  padding: 0 var(--space-sm);
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.migrateBtn:hover {
+  color: var(--color-accent);
+}
+
 @media (hover: none) {
-  .deleteBtn {
+  .deleteBtn,
+  .migrateBtn {
     opacity: 0.6;
   }
+}
+
+.editRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.typeToggle {
+  width: var(--touch-target);
+  height: var(--touch-target);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.typeToggle:hover {
+  background: var(--color-bg-secondary);
+}
+
+.signifierBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.signifierBtn:hover {
+  background: var(--color-bg-secondary);
+}
+
+.signifierBtn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
 }

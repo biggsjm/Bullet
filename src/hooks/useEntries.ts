@@ -80,10 +80,43 @@ export async function reorderEntries(_date: string, orderedIds: number[]) {
   await Promise.all(updates);
 }
 
+export async function reorderCollectionEntries(orderedIds: number[]) {
+  const updates = orderedIds.map((id, index) =>
+    db.entries.update(id, { sortOrder: index, updatedAt: Date.now() })
+  );
+  await Promise.all(updates);
+}
+
 export async function searchEntries(query: string): Promise<Entry[]> {
   if (!query.trim()) return [];
   const lower = query.toLowerCase();
   return db.entries
     .filter((entry) => entry.content.toLowerCase().includes(lower))
     .toArray();
+}
+
+export async function migrateEntry(entryId: number, targetDate: string) {
+  const entry = await db.entries.get(entryId);
+  if (!entry) return;
+
+  // Mark original entry as migrated
+  await db.entries.update(entryId, {
+    taskState: 'migrated',
+    updatedAt: Date.now(),
+  });
+
+  // Create new entry at target date
+  const count = await db.entries.where('date').equals(targetDate).count();
+  const now = Date.now();
+  await db.entries.add({
+    bulletType: entry.bulletType,
+    taskState: 'incomplete',
+    signifier: entry.signifier,
+    content: entry.content,
+    collectionId: entry.collectionId,
+    date: targetDate,
+    createdAt: now,
+    updatedAt: now,
+    sortOrder: count,
+  });
 }

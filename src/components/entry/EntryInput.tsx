@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import type { BulletType, Signifier } from '../../db/models';
 import styles from './EntryInput.module.css';
 
@@ -7,12 +7,23 @@ interface Props {
   placeholder?: string;
 }
 
-export function EntryInput({ onAdd, placeholder = 'Add entry...' }: Props) {
+export interface EntryInputRef {
+  focus: () => void;
+}
+
+export const EntryInput = forwardRef<EntryInputRef, Props>(function EntryInput(
+  { onAdd, placeholder = 'Add entry...' },
+  ref
+) {
   const [content, setContent] = useState('');
   const [bulletType, setBulletType] = useState<BulletType>('task');
   const [signifier, setSignifier] = useState<Signifier>(null);
   const [showOptions, setShowOptions] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    focus: () => inputRef.current?.focus(),
+  }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,4 +103,4 @@ export function EntryInput({ onAdd, placeholder = 'Add entry...' }: Props) {
       )}
     </form>
   );
-}
+});

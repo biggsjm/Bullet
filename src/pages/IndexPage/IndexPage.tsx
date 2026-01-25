@@ -60,7 +60,15 @@ export function IndexPage() {
         {searchResults.length > 0 && (
           <div className={styles.searchResults}>
             {searchResults.slice(0, 20).map((entry) => (
-              <div key={entry.id} className={styles.searchResult}>
+              <div
+                key={entry.id}
+                className={styles.searchResult}
+                onClick={() => navigate('/daily', { state: { date: entry.date } })}
+                onKeyDown={(e) => e.key === 'Enter' && navigate('/daily', { state: { date: entry.date } })}
+                role="button"
+                tabIndex={0}
+                aria-label={`Go to ${entry.date}: ${entry.content}`}
+              >
                 <span className={styles.resultDate}>{entry.date}</span>
                 <span className={styles.resultContent}>{entry.content}</span>
               </div>
